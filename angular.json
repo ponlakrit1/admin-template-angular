@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/admin-lte/css/adminlte.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -95,12 +96,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/admin-lte/css/adminlte.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e5e202b3-952e-44df-8d54-a8d6188932ba"
   }
 }
