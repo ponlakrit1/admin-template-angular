@@ -31,7 +31,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/admin-lte/css/adminlte.css"
+              "src/assets/admin-lte/css/adminlte.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -97,7 +98,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/admin-lte/css/adminlte.css"
+              "src/assets/admin-lte/css/adminlte.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": []
           }
