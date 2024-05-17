@@ -34,7 +34,7 @@
             </a>
             <ul class="nav nav-treeview" *ngFor="let subMenuItem of menuItem.sub" [ngClass]="{'sub-menu-active': isSubMenuActive(menuItem.sub)}">
               <li class="nav-item">
-                <a routerLinkActive="active" [routerLink]="[subMenuItem.path]" class="nav-link">
+                <a routerLinkActive="active" [routerLink]="[subMenuItem.path]" class="nav-link sub-menu">
                   <i class="nav-icon" [className]="'fas fa-' + subMenuItem.icon"></i>
                   &nbsp;
                   <p>{{ subMenuItem.title }}</p>
