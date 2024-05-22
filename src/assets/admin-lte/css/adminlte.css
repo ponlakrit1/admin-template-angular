@@ -160,13 +160,13 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: var(--color-gray);
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #0056b3;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -4361,7 +4361,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #007bff;
+  background-color: var(--color-primary);
 }
 
 .nav-fill > .nav-link,
@@ -11752,7 +11752,7 @@ body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-m
 }
 
 .content-wrapper {
-  background-color: #f4f6f9;
+  background-color: var(--color-content-wraper);
 }
 
 .content-wrapper > .content {
@@ -12460,7 +12460,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .brand-link:hover {
-  color: #fff;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -12575,6 +12575,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   padding-top: 0;
   scrollbar-color: #a9a9a9 transparent;
   scrollbar-width: none;
+  background-color: var(--color-sidebar);
 }
 
 .sidebar::-webkit-scrollbar-thumb {
@@ -15478,7 +15479,7 @@ body.text-sm .control-sidebar {
 }
 
 .nav-pills .nav-link:not(.active):hover {
-  color: #007bff;
+  color: var(--color-primary);
 }
 
 .nav-pills .nav-item.dropdown.show .nav-link:hover {

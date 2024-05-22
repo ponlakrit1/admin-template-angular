@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+$gray-color: var(--color-gray);
+$primary-color: var(--color-primary);
+
+/* TEXT */
+.title-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: $gray-color;
+}
+
+.sub-title-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: $gray-color;
+}
+
+.label-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: $gray-color;
+}
