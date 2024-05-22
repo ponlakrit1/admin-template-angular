@@ -1,0 +1,12 @@
+:root {
+    --color-primary: #4b49ac;
+    --color-secondary:#98bdff;
+    --color-success:#4caf50;
+    --color-danger:#ef5350;
+    --color-warning:#ff9800;
+    --color-info:#03a9f4;
+
+    --color-sidebar:#ffffff;
+
+    --font-family-sans-serif: "Kanit", sans-serif;
+}
