@@ -1,23 +1,21 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { ManagementComponent } from './pages/management/management.component';
-import { InfoComponent } from './pages/info/info.component';
-import { Sub1Component } from './pages/test/sub1/sub1.component';
+import { ChartComponent } from './pages/example/chart/chart.component';
+import { FormFieldComponent } from './pages/example/form-field/form-field.component';
+import { Sub1Component } from './pages/example/sub-menu/sub1/sub1.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: '/home',
+        redirectTo: '/chart',
         pathMatch: 'full',
     },
-    { path: 'home', component: HomeComponent },
-    { path: 'management', component: ManagementComponent },
-    { path: 'info', component: InfoComponent },
-    { path: 'test', children: [
+    { path: 'chart', component: ChartComponent },
+    { path: 'form-field', component: FormFieldComponent },
+    { path: 'sub-menu', children: [
         { path: 'sub1', component: Sub1Component },
     ]},
     {
         path: '**',
-        redirectTo: 'home'
+        redirectTo: 'chart'
     }
 ];

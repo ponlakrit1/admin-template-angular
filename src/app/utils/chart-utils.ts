@@ -6,7 +6,7 @@ export default class ChartUtils {
       responsive: false,
       plugins: {
         legend: {
-          display: true
+          display: false
         },
         datalabels: {
           display: false,

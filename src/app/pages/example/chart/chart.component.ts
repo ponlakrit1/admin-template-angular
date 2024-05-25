@@ -3,18 +3,18 @@ import { CommonModule, isPlatformBrowser } from "@angular/common";
 import { MatCardModule } from '@angular/material/card'; 
 import { ChartConfiguration } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import ChartUtils from '../../utils/chart-utils';
+import ChartUtils from '../../../utils/chart-utils';
 import { Chart, registerables } from "chart.js";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-chart',
   standalone: true,
   imports: [MatCardModule, BaseChartDirective, CommonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  templateUrl: './chart.component.html',
+  styleUrl: './chart.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class ChartComponent implements OnInit {
   public isBrowser: boolean;
 
   public chartDoughnutOptions = ChartUtils.getDoughnutDefaultOptions();
