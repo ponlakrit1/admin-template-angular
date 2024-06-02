@@ -1,4 +1,4 @@
-import { Component, LOCALE_ID, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -12,6 +12,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+} from '@angular/material/dialog';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -43,7 +52,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     { provide: DateAdapter, useClass: CustomDateAdapter },
   ],
   templateUrl: './form-field.component.html',
-  styleUrl: './form-field.component.scss'
+  styleUrl: './form-field.component.scss',
 })
 export class FormFieldComponent implements OnInit {
   public matcher = new MyErrorStateMatcher();
@@ -64,7 +73,7 @@ export class FormFieldComponent implements OnInit {
     {value: 'O', label: 'Other'},
   ];
   
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(public dialog: MatDialog) {
     
   }
 
@@ -81,12 +90,49 @@ export class FormFieldComponent implements OnInit {
       this.form.markAllAsTouched();
     }
 
+    const dialogRef = this.dialog.open(InsertSampleDialog, {
+      data: "Test text", // Send to dialog
+      width: "560px",
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+}
+
+@Component({
+  selector: 'insert-sample-dialog',
+  templateUrl: './dialog/insert-sample.dialog.html',
+  standalone: true,
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+  ],
+})
+export class InsertSampleDialog {
+  constructor(
+    public dialogRef: MatDialogRef<InsertSampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: string,
+    private _snackBar: MatSnackBar,
+  ) {
+
+  }
+
+  onNoClick(): void {
     this._snackBar.open('On tap OK!', 'Close', {
       duration: 3000,
-      verticalPosition: 'bottom',
+      verticalPosition: 'top',
       horizontalPosition: 'right',
       panelClass: ['snackbar-success'],
     });
+
+    this.dialogRef.close();
   }
-  
 }
