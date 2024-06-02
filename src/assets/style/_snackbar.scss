@@ -1,0 +1,47 @@
+.snackbar-success {
+    --mdc-snackbar-container-color: var(--color-success) !important;
+    --mdc-snackbar-supporting-text-color: white !important;
+    --mat-mdc-snack-bar-button-color: white !important;
+}
+
+.snackbar-success button {
+    background-color: var(--color-success);
+    color: white !important;
+    border: none;
+}
+
+.snackbar-danger {
+    --mdc-snackbar-container-color: var(--color-danger) !important;
+    --mdc-snackbar-supporting-text-color: white !important;
+    --mat-mdc-snack-bar-button-color: white !important;
+}
+
+.snackbar-danger button {
+    background-color: var(--color-danger);
+    color: white !important;
+    border: none;
+}
+
+.snackbar-info {
+    --mdc-snackbar-container-color: var(--color-info) !important;
+    --mdc-snackbar-supporting-text-color: white !important;
+    --mat-mdc-snack-bar-button-color: white !important;
+}
+
+.snackbar-info button {
+    background-color: var(--color-info);
+    color: white !important;
+    border: none;
+}
+
+.snackbar-warning {
+    --mdc-snackbar-container-color: var(--color-warning) !important;
+    --mdc-snackbar-supporting-text-color: white !important;
+    --mat-mdc-snack-bar-button-color: white !important;
+}
+
+.snackbar-warning button {
+    background-color: var(--color-warning);
+    color: white !important;
+    border: none;
+}
