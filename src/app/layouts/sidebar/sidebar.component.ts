@@ -20,6 +20,7 @@ export const ROUTES: RouteInfo[] = [
   { path: '/form-field', title: 'แบบฟอร์ม',  icon:'file', sub: [] },
   { path: '/sub-menu', title: 'ตัวอย่างเมนูย่อย',  icon:'chevron-down', sub: [
     {path: '/sub-menu/sub1', title: 'เมนูย่อย 1',  icon:'circle'},
+    {path: '/sub-menu/sub2', title: 'เมนูย่อย 2',  icon:'circle'},
   ] },
 ];
 

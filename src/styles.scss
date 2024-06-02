@@ -1,25 +1,86 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$template-angular-primary: mat.define-palette(mat.$indigo-palette);
-$template-angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$custom-primary-palette: (
+  50: var(--color-primary),
+  100: var(--color-primary),
+  200: var(--color-primary),
+  300: var(--color-primary),
+  400: var(--color-primary),
+  500: var(--color-primary),
+  600: var(--color-primary),
+  700: var(--color-primary),
+  800: var(--color-primary),
+  900: var(--color-primary),
+  contrast: (
+    50: #FFF,
+    100: #FFF,
+    200: #FFF,
+    300: #FFF,
+    400: #FFF,
+    500: #FFF,
+    600: #FFF,
+    700: #FFF,
+    800: #FFF,
+    900: #FFF,
+  ),
+);
 
-// The warn palette is optional (defaults to red).
-$template-angular-warn: mat.define-palette(mat.$red-palette);
+$custom-accent-palette: (
+  50: var(--color-secondary),
+  100: var(--color-secondary),
+  200: var(--color-secondary),
+  300: var(--color-secondary),
+  400: var(--color-secondary),
+  500: var(--color-secondary),
+  600: var(--color-secondary),
+  700: var(--color-secondary),
+  800: var(--color-secondary),
+  900: var(--color-secondary),
+  contrast: (
+    50: #FFF,
+    100: #FFF,
+    200: #FFF,
+    300: #FFF,
+    400: #FFF,
+    500: #FFF,
+    600: #FFF,
+    700: #FFF,
+    800: #FFF,
+    900: #FFF,
+  ),
+);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
+$custom-danger-palette: (
+  50: var(--color-danger),
+  100: var(--color-danger),
+  200: var(--color-danger),
+  300: var(--color-danger),
+  400: var(--color-danger),
+  500: var(--color-danger),
+  600: var(--color-danger),
+  700: var(--color-danger),
+  800: var(--color-danger),
+  900: var(--color-danger),
+  contrast: (
+    50: #FFF,
+    100: #FFF,
+    200: #FFF,
+    300: #FFF,
+    400: #FFF,
+    500: #FFF,
+    600: #FFF,
+    700: #FFF,
+    800: #FFF,
+    900: #FFF,
+  ),
+);
+
+$template-angular-primary: mat.define-palette($custom-primary-palette);
+$template-angular-accent: mat.define-palette($custom-accent-palette);
+$template-angular-warn: mat.define-palette($custom-danger-palette);
+
 $template-angular-theme: mat.define-light-theme((
   color: (
     primary: $template-angular-primary,
@@ -30,9 +91,6 @@ $template-angular-theme: mat.define-light-theme((
   density: 0
 ));
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include mat.all-component-themes($template-angular-theme);
 
 /* You can add global styles to this file, and also import other style files */
