@@ -16,12 +16,13 @@ declare interface SubRouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-  { path: '/chart', title: 'แผนภูมิ',  icon: 'chart-line', sub: [] },
-  { path: '/form-field', title: 'แบบฟอร์ม',  icon:'file', sub: [] },
-  { path: '/sub-menu', title: 'ตัวอย่างเมนูย่อย',  icon:'chevron-down', sub: [
-    {path: '/sub-menu/sub1', title: 'เมนูย่อย 1',  icon:'circle'},
-    {path: '/sub-menu/sub2', title: 'เมนูย่อย 2',  icon:'circle'},
+  { path: '/chart', title: 'Chart',  icon: 'chart-line', sub: [] },
+  { path: '/form-field', title: 'Form field',  icon:'file', sub: [] },
+  { path: '/sub-menu', title: 'Sub menu',  icon:'chevron-down', sub: [
+    {path: '/sub-menu/sub1', title: 'Sub menu 1',  icon:'circle'},
+    {path: '/sub-menu/sub2', title: 'Sub menu 2',  icon:'circle'},
   ] },
+  { path: '/data-table', title: 'Data table',  icon:'table', sub: [] },
 ];
 
 @Component({

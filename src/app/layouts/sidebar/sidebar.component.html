@@ -27,7 +27,7 @@
             <p>{{ menuItem.title }}</p>
           </a>
           <ng-template #sub_menu>
-            <a routerLinkActive="active" [routerLink]="[menuItem.sub[0].path]" class="nav-link">
+            <a [routerLink]="[menuItem.sub[0].path]" [ngClass]="{'active': isSubMenuActive(menuItem.sub)}" class="nav-link">
               <i class="nav-icon" [className]="'fas fa-' + menuItem.icon"></i>
               &nbsp;
               <p>{{ menuItem.title }}</p>
