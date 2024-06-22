@@ -1,0 +1,90 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <p class="m-0 sub-title-text">Chart</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <mat-card>
+                <mat-card-header>
+                  <p class="sub-title-text">Doughnut Chart</p>
+                </mat-card-header>
+                <mat-card-content class="d-flex justify-content-center">
+                  <canvas baseChart *ngIf="isBrowser"
+                    height="280"
+                    width="280"
+                    [labels]="chartDoughnutLabels"
+                    [datasets]="chartDoughnutDatasets"
+                    [options]="chartDoughnutOptions"
+                    [type]="'doughnut'">
+                  </canvas>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="col-md-6">
+              <mat-card>
+                <mat-card-header>
+                  <p class="sub-title-text">Line chart</p>
+                </mat-card-header>
+                <mat-card-content>
+                  <canvas baseChart *ngIf="isBrowser"
+                    style="max-height: 300px;"
+                    [labels]="chartLineLabels"
+                    [datasets]="chartLineDatasets"
+                    [options]="chartLineOptions"
+                    [type]="'line'">
+                  </canvas>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <mat-card>
+                <mat-card-header>
+                  <p class="sub-title-text">Bar chart (Vertical)</p>
+                </mat-card-header>
+                <mat-card-content>
+                  <canvas baseChart *ngIf="isBrowser"
+                    style="max-height: 300px;"
+                    [labels]="chartBarVLabels"
+                    [datasets]="chartBarVDatasets"
+                    [options]="chartBarVOptions"
+                    [type]="'bar'">
+                  </canvas>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="col-md-6">
+              <mat-card>
+                <mat-card-header>
+                  <p class="sub-title-text">Bar chart (Horizontal)</p>
+                </mat-card-header>
+                <mat-card-content>
+                  <canvas baseChart *ngIf="isBrowser"
+                    style="max-height: 300px;"
+                    [labels]="chartBarHLabels"
+                    [datasets]="chartBarHDatasets"
+                    [options]="chartBarHOptions"
+                    [type]="'bar'">
+                  </canvas>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,52 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar elevation-1">
+  <!-- Brand Logo -->
+  <a href="#" class="brand-link">
+    <span class="brand-text font-weight-light">PROJECT NAME</span>
+  </a>
+  <hr/>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel d-flex">
+      <div class="info">
+        <a href="#" class="d-block">Nctine tech</a>
+      </div>
+    </div>
+    <hr/>
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+              with font-awesome or any other icon font library -->
+
+        <li class="nav-item" *ngFor="let menuItem of menuItems">
+          <a *ngIf="menuItem.sub.length == 0; else sub_menu" routerLinkActive="active" [routerLink]="[menuItem.path]" class="nav-link">
+            <i class="nav-icon" [className]="'fas fa-' + menuItem.icon"></i>
+            &nbsp;
+            <p>{{ menuItem.title }}</p>
+          </a>
+          <ng-template #sub_menu>
+            <a [routerLink]="[menuItem.sub[0].path]" [ngClass]="{'active': isSubMenuActive(menuItem.sub)}" class="nav-link">
+              <i class="nav-icon" [className]="'fas fa-' + menuItem.icon"></i>
+              &nbsp;
+              <p>{{ menuItem.title }}</p>
+            </a>
+            <ul class="nav nav-treeview" *ngFor="let subMenuItem of menuItem.sub" [ngClass]="{'sub-menu-active': isSubMenuActive(menuItem.sub)}">
+              <li class="nav-item">
+                <a routerLinkActive="active" [routerLink]="[subMenuItem.path]" class="nav-link sub-menu">
+                  <i class="nav-icon" [className]="'fas fa-' + subMenuItem.icon"></i>
+                  &nbsp;
+                  <p>{{ subMenuItem.title }}</p>
+                </a>
+              </li>
+            </ul>
+          </ng-template>
+        </li>
+
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

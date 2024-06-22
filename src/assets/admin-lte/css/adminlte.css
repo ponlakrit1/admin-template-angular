@@ -10,6 +10,9 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ @import url("./../../style/_variable.css");
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -37,8 +40,6 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -60,7 +61,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-family-sans-serif);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -159,13 +160,13 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: var(--color-gray);
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #0056b3;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -4360,7 +4361,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #007bff;
+  background-color: var(--color-primary);
 }
 
 .nav-fill > .nav-link,
@@ -6242,7 +6243,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-family-sans-serif);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6355,7 +6356,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-family-sans-serif);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -11751,7 +11752,7 @@ body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-m
 }
 
 .content-wrapper {
-  background-color: #f4f6f9;
+  background-color: var(--color-content-wraper);
 }
 
 .content-wrapper > .content {
@@ -12459,7 +12460,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .brand-link:hover {
-  color: #fff;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -12574,6 +12575,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   padding-top: 0;
   scrollbar-color: #a9a9a9 transparent;
   scrollbar-width: none;
+  background-color: var(--color-sidebar);
 }
 
 .sidebar::-webkit-scrollbar-thumb {
@@ -12945,7 +12947,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
 .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
-  background-color: #007bff;
+  background-color: var(--color-primary);
   color: #fff;
 }
 
@@ -15477,7 +15479,7 @@ body.text-sm .control-sidebar {
 }
 
 .nav-pills .nav-link:not(.active):hover {
-  color: #007bff;
+  color: var(--color-primary);
 }
 
 .nav-pills .nav-item.dropdown.show .nav-link:hover {
@@ -40035,7 +40037,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .mapael .mapTooltip {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-family-sans-serif);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;

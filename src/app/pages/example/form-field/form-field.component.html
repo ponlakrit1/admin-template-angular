@@ -1,0 +1,114 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <p class="m-0 sub-title-text">Form field</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+          <mat-card>
+            <mat-card-header>
+              <p class="sub-title-text">Example</p>
+            </mat-card-header>
+            <mat-card-content>
+              <form [formGroup]="form">
+                <div class="row">
+                  <div class="col-md-4">
+                    <span class="label-text">Username</span>
+                    <mat-form-field class="form-full-width" appearance="outline">
+                      <input type="text" matInput formControlName="username" [errorStateMatcher]="matcher" placeholder="Input some text...">
+                      @if (f['username'].hasError('required')) {
+                        <mat-error>Username is <strong>required</strong></mat-error>
+                      }
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <span class="label-text">Email</span>
+                    <mat-form-field class="form-full-width" appearance="outline">
+                      <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher" placeholder="Ex. mail@test.com">
+                      @if (f['email'].hasError('email') && !f['email'].hasError('required')) {
+                        <mat-error>Please enter a valid email address</mat-error>
+                      }
+                      @if (f['email'].hasError('required')) {
+                        <mat-error>Email is <strong>required</strong></mat-error>
+                      }
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <span class="label-text">Birth date</span>
+                    <mat-form-field class="form-full-width" appearance="outline">
+                      <input matInput formControlName="birthdate" [matDatepicker]="picker" placeholder="dd/MM/yyyy">
+                      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                      @if (f['birthdate'].hasError('required')) {
+                        <mat-error>Birthdate is <strong>required</strong></mat-error>
+                      }
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <span class="label-text">Gender</span>
+                    <mat-form-field class="form-full-width" appearance="outline">
+                      <mat-select formControlName="gender">
+                        @for (item of dropdownOptions; track item) {
+                          <mat-option [value]="item.value">{{item.label}}</mat-option>
+                        }
+                      </mat-select>
+                      @if (f['gender'].hasError('required')) {
+                        <mat-error>Gender is <strong>required</strong></mat-error>
+                      }
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <span class="label-text">Address</span>
+                    <mat-form-field class="form-full-width" appearance="outline">
+                      <textarea matInput formControlName="address" [errorStateMatcher]="matcher" placeholder="Input some long text..."></textarea>
+                      @if (f['address'].hasError('required')) {
+                        <mat-error>Address is <strong>required</strong></mat-error>
+                      }
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="label-text">Terms And condition [Radio button]</div>
+                    <mat-radio-group class="form-full-width" formControlName="acceptTerms1">
+                      <mat-radio-button value="1">Option 1</mat-radio-button>
+                      <mat-radio-button value="2">Option 2</mat-radio-button>
+                    </mat-radio-group>
+                    @if (f['acceptTerms1'].hasError('required')) {
+                      <mat-error>Terms And condition 1 is <strong>required</strong></mat-error>
+                    }
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <span class="label-text">Terms And condition [Check box]</span>
+                    <section class="form-full-width">
+                      <mat-checkbox formControlName="acceptTerms2">Accept terms</mat-checkbox>
+                      <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
+                    </section>
+                  </div>
+                </div>
+              </form>
+            </mat-card-content>
+            <mat-card-footer class="d-flex justify-content-end p-3">
+              <button mat-flat-button class="mr-1" color="primary" (click)="onTab()">OK</button>
+              <button mat-flat-button class="mr-1" color="warn">Cancel</button>
+            </mat-card-footer>
+          </mat-card>
+        </div>
+    </section>
+</div>

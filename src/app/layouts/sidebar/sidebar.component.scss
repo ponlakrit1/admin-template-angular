@@ -1,0 +1,9 @@
+.sub-menu-active {
+    display: block !important;
+}
+
+/* Defualt width is calc(250px - 0.5rem * 2) */
+.sub-menu {
+    width: calc(220px - 0.5rem * 2) !important;
+    margin-left: 30px;
+}

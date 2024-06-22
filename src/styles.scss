@@ -1,1 +1,99 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$custom-primary-palette: (
+  50: var(--color-primary),
+  100: var(--color-primary),
+  200: var(--color-primary),
+  300: var(--color-primary),
+  400: var(--color-primary),
+  500: var(--color-primary),
+  600: var(--color-primary),
+  700: var(--color-primary),
+  800: var(--color-primary),
+  900: var(--color-primary),
+  contrast: (
+    50: #FFF,
+    100: #FFF,
+    200: #FFF,
+    300: #FFF,
+    400: #FFF,
+    500: #FFF,
+    600: #FFF,
+    700: #FFF,
+    800: #FFF,
+    900: #FFF,
+  ),
+);
+
+$custom-accent-palette: (
+  50: var(--color-secondary),
+  100: var(--color-secondary),
+  200: var(--color-secondary),
+  300: var(--color-secondary),
+  400: var(--color-secondary),
+  500: var(--color-secondary),
+  600: var(--color-secondary),
+  700: var(--color-secondary),
+  800: var(--color-secondary),
+  900: var(--color-secondary),
+  contrast: (
+    50: #FFF,
+    100: #FFF,
+    200: #FFF,
+    300: #FFF,
+    400: #FFF,
+    500: #FFF,
+    600: #FFF,
+    700: #FFF,
+    800: #FFF,
+    900: #FFF,
+  ),
+);
+
+$custom-danger-palette: (
+  50: var(--color-danger),
+  100: var(--color-danger),
+  200: var(--color-danger),
+  300: var(--color-danger),
+  400: var(--color-danger),
+  500: var(--color-danger),
+  600: var(--color-danger),
+  700: var(--color-danger),
+  800: var(--color-danger),
+  900: var(--color-danger),
+  contrast: (
+    50: #FFF,
+    100: #FFF,
+    200: #FFF,
+    300: #FFF,
+    400: #FFF,
+    500: #FFF,
+    600: #FFF,
+    700: #FFF,
+    800: #FFF,
+    900: #FFF,
+  ),
+);
+
+$template-angular-primary: mat.define-palette($custom-primary-palette);
+$template-angular-accent: mat.define-palette($custom-accent-palette);
+$template-angular-warn: mat.define-palette($custom-danger-palette);
+
+$template-angular-theme: mat.define-light-theme((
+  color: (
+    primary: $template-angular-primary,
+    accent: $template-angular-accent,
+    warn: $template-angular-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+@include mat.all-component-themes($template-angular-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/style/snackbar";
+@import "./assets/style/label";
+@import "./assets/style/dialog";

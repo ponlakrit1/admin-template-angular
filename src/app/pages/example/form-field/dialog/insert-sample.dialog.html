@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Your word is {{data}}</h2>
+<mat-dialog-content>
+    <p>Can you type other word</p>
+    <mat-form-field>
+        <mat-label>Your word</mat-label>
+        <input matInput [(ngModel)]="data">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-end">
+    <button mat-flat-button class="mr-1" color="primary" [mat-dialog-close]="data" cdkFocusInitial>OK</button>
+    <button mat-flat-button class="mr-1" color="warn" (click)="onNoClick()">Cancel</button>
+</mat-dialog-actions>
