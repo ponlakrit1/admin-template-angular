@@ -1,8 +1,16 @@
+$content-color: var(--color-content-wraper);
+
 .form-signin {
     width: 100%;
-    max-width: 350px;
-    padding: 15px;
+    max-width: 500px;
+    padding: 50px;
     margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $content-color;
+    border-radius: 24px;
 }
 
 .form-signin .form-control {
@@ -11,4 +19,8 @@
     height: auto;
     padding: 10px;
     font-size: 16px;
+}
+
+.form-full-width {
+    width: 100%;
 }

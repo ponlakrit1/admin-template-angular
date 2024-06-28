@@ -7,6 +7,7 @@ import { DataTableComponent } from './features/example/data-table/data-table.com
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoginComponent } from './features/login/login.component';
 import { LayoutComponent } from './core/layouts/layout.component';
+import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
     {
@@ -44,8 +45,12 @@ export const routes: Routes = [
             },
         ]
     },
+    { 
+        path: 'page-not-found', 
+        component: PageNotFoundComponent,
+    },
     {
         path: '**',
-        redirectTo: 'chart'
+        redirectTo: 'page-not-found'
     }
 ];
