@@ -3,7 +3,7 @@ import { CommonModule, isPlatformBrowser } from "@angular/common";
 import { MatCardModule } from '@angular/material/card'; 
 import { ChartConfiguration } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import ChartUtils from '../../../utils/chart-utils';
+import ChartUtils from '../../../core/utils/chart-utils';
 import { Chart, registerables } from "chart.js";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 

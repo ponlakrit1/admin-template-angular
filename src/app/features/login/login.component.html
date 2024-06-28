@@ -1,0 +1,23 @@
+<form class="form-signin" [formGroup]="form">
+    <div>
+        <span class="label-text">Username</span>
+        <mat-form-field class="form-full-width" appearance="outline">
+            <input type="text" matInput formControlName="username" [errorStateMatcher]="matcher" placeholder="Username">
+            @if (f['username'].hasError('required')) {
+              <mat-error>Username is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+    </div>
+    <div>
+        <span class="label-text">Password</span>
+        <mat-form-field class="form-full-width" appearance="outline">
+            <input type="password" matInput formControlName="password" [errorStateMatcher]="matcher" placeholder="Password">
+            @if (f['password'].hasError('required')) {
+              <mat-error>Password is <strong>required</strong></mat-error>
+            }
+        </mat-form-field>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" (click)="onSubmit()">Sign in</button>
+    </div>
+</form>

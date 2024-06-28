@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:template-angular": "node dist/template-angular/server/server.mjs",
     "build:prod": "ng build --configuration production --base-href /",
-    "run:prod": "ng serve --configuration=production"
+    "start:prod": "ng serve --configuration=production"
   },
   "private": true,
   "dependencies": {

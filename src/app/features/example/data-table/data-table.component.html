@@ -1,0 +1,72 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <p class="m-0 sub-title-text">Datatable</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+          <mat-card>
+            <mat-card-header>
+              <p class="sub-title-text">User table</p>
+            </mat-card-header>
+            <mat-card-content>
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              
+                <!-- Name Firstname -->
+                <ng-container matColumnDef="firstname">
+                  <th mat-header-cell *matHeaderCellDef> Firstname </th>
+                  <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+                </ng-container>
+              
+                <!-- Weight Lastname -->
+                <ng-container matColumnDef="lastname">
+                  <th mat-header-cell *matHeaderCellDef> Lastname </th>
+                  <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+                </ng-container>
+              
+                <!-- Symbol Age -->
+                <ng-container matColumnDef="age">
+                  <th mat-header-cell *matHeaderCellDef> Age </th>
+                  <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+                </ng-container>
+
+                <!-- Symbol Gender -->
+                <ng-container matColumnDef="gender">
+                  <th mat-header-cell *matHeaderCellDef> Gender </th>
+                  <td mat-cell *matCellDef="let element"> {{element.gender == 'M' ? 'Male' : 'Female'}} </td>
+                </ng-container>
+
+                <!-- Symbol Action -->
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef> Action </th>
+                  <td mat-cell *matCellDef="let element">
+                    <div class="btn-group btn-group-sm" role="group">
+                      <button type="button" class="btn btn-primary"><i class="fa-solid fa-eye"></i></button>
+                      <button type="button" class="btn btn-secondary"><i class="fas fa-edit"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                    </div>
+                  </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                            showFirstLastButtons>
+              </mat-paginator>
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </section>
+</div>
