@@ -1,11 +1,16 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar elevation-1">
+<aside class="main-sidebar">
   <!-- Brand Logo -->
-  <a href="#" class="brand-link">
-    <span class="brand-text font-weight-light">PROJECT NAME</span>
-  </a>
-
-  <div class="side-menu-divider"></div>
+  <div class="header-block" *ngIf="!isMobile(); else blankBlock">
+    <a href="#" class="brand-link">
+      <span class="brand-text font-weight-light">PROJECT NAME</span>
+    </a>
+  </div>
+  <ng-template #blankBlock>
+    <div class="menu-block">
+      <a class="nav-link" role="button" (click)="pushMenu()"><i class="fas fa-bars"></i></a>
+    </div>
+  </ng-template>
 
   <!-- Sidebar -->
   <div class="sidebar">

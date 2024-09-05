@@ -1,4 +1,5 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ScreenUtils } from '../../../utils/screen-utils';
 
 @Component({
   selector: 'app-navbar',
@@ -7,19 +8,16 @@ import { Component, Renderer2 } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent {
-  constructor(private renderer: Renderer2) {
+export class NavbarComponent implements OnInit {
+  constructor(private screenUtils: ScreenUtils) {
+
+  }
+
+  ngOnInit(): void {
 
   }
 
   pushMenu() {
-    const bodyElement = this.renderer.selectRootElement('body', true);
-    const hasClass = bodyElement.classList.contains('sidebar-collapse');
-    
-    if (hasClass) {
-      this.renderer.removeClass(bodyElement, 'sidebar-collapse');
-    } else {
-      this.renderer.addClass(bodyElement, 'sidebar-collapse');
-    }
+    this.screenUtils.pushMenu();
   }
 }

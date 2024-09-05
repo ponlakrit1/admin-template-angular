@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { ScreenUtils } from '../../../utils/screen-utils';
 
 declare interface RouteInfo {
   path: string;
@@ -35,7 +36,7 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   public menuItems: any[];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private screenUtils: ScreenUtils) {
     this.menuItems = [];
   }
 
@@ -56,6 +57,14 @@ export class SidebarComponent implements OnInit {
     }
 
     return isMatch;
+  }
+
+  isMobile() {
+    return this.screenUtils.isMobile();
+  }
+
+  pushMenu() {
+    this.screenUtils.pushMenu();
   }
 
 }
