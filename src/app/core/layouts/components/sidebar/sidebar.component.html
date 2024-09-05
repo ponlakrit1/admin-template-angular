@@ -21,20 +21,20 @@
               with font-awesome or any other icon font library -->
 
         <li class="nav-item" *ngFor="let menuItem of menuItems">
-          <a *ngIf="menuItem.sub.length == 0; else sub_menu" routerLinkActive="active" [routerLink]="[menuItem.path]" class="nav-link">
+          <a *ngIf="menuItem.sub.length == 0; else sub_menu" routerLinkActive="active" [routerLink]="[menuItem.path]" (click)="dismissMenu()" class="nav-link">
             <i class="nav-icon" [className]="'fas fa-' + menuItem.icon"></i>
             &nbsp;
             <p>{{ menuItem.title }}</p>
           </a>
           <ng-template #sub_menu>
-            <a [routerLink]="[menuItem.sub[0].path]" [ngClass]="{'active': isSubMenuActive(menuItem.sub)}" class="nav-link">
+            <a [routerLink]="[menuItem.sub[0].path]" [ngClass]="{'active': isSubMenuActive(menuItem.sub)}" (click)="dismissMenu()" class="nav-link">
               <i class="nav-icon" [className]="'fas fa-' + menuItem.icon"></i>
               &nbsp;
               <p>{{ menuItem.title }}</p>
             </a>
             <ul class="nav nav-treeview" *ngFor="let subMenuItem of menuItem.sub" [ngClass]="{'sub-menu-active': isSubMenuActive(menuItem.sub)}">
               <li class="nav-item">
-                <a routerLinkActive="active" [routerLink]="[subMenuItem.path]" class="nav-link sub-menu">
+                <a routerLinkActive="active" [routerLink]="[subMenuItem.path]" (click)="dismissMenu()" class="nav-link sub-menu">
                   <i class="nav-icon" [className]="'fas fa-' + subMenuItem.icon"></i>
                   &nbsp;
                   <p>{{ subMenuItem.title }}</p>

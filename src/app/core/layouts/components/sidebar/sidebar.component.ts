@@ -67,4 +67,8 @@ export class SidebarComponent implements OnInit {
     this.screenUtils.pushMenu();
   }
 
+  dismissMenu() {
+    this.screenUtils.mobileDismissMenu();
+  }
+
 }

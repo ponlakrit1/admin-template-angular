@@ -39,7 +39,7 @@ export class ScreenUtils {
     } 
   }
 
-  mobileMenuNavigate() {
+  mobileDismissMenu() {
     if (this.isMobile()) {
       const bodyElement = this.renderer.selectRootElement('body', true);
       
